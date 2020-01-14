@@ -10,12 +10,26 @@ creat一个新的环境，拿这个专门做这本书上的例子，记得一定
 # python 3.6!!
 # python 3.6!!  
 然后升级下pip这个包 因为新建个环境pip只有9.0，而最新的已经19了 这步在anaconda就可以完成 不多啰嗦  
+顺便在anaconda里装一下Jupyter notebook 我以后代码都在这里完成 有及时的反馈
 好的 升级完后打开anaconda Powershell Prompt 
-输入  conda activate *your env name*激活环境 我的是door 所以输入的是door  
+输入  
+```
+conda activate *your env name*激活环境 我的是door 所以输入的是door  
+```
 然后输入以下指令  
+```
 pip install tensorflow -i https://pypi.douban.com/simple  
+```
 再试了各种清华源，中科大源后没想到还是豆瓣最香。。  
-如果中间没错误的话 输入python  
+听说清华源已经不维护了，对这两个源感兴趣的同学 查看这个 [链接](https://zhuanlan.zhihu.com/p/95100538)
+如果中间没错误的话 输入  
+```
+python  
 >>>import tensorflow as tf
->>> tf.__version__ 记住是**两个**_哦  
-好 到这一步其实我装了一下午 吃个饭一会更。。
+>>> tf.__version__ 
+```
+记住是**两个下划线**哦  
+好 到这一步其实我装了一下午 吃个饭一会更。。  
+我回来了 接下来终于要正式开始啦
+### exp1 MNIST机器学习入门  
++ 首先导入数据集  
