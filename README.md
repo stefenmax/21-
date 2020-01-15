@@ -18,7 +18,7 @@ conda activate *your env name*激活环境 我的是door 所以输入的是door
 ```
 然后输入以下指令  
 ```
-pip install tensorflow -i https://pypi.douban.com/simple  
+pip install tensorflow==1.5 -i https://pypi.douban.com/simple  
 ```
 再试了各种清华源，中科大源后没想到还是豆瓣最香。。  
 听说清华源已经不维护了，对这两个源感兴趣的同学 查看这个 [链接](https://zhuanlan.zhihu.com/p/95100538)
@@ -33,3 +33,24 @@ python
 我回来了 接下来终于要正式开始啦
 ### exp1 MNIST机器学习入门  
 + 首先导入数据集  
+```
+from tensorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets("MNIST_data/",one_hot=True)
+```  
+这部分和原文完全一致哈，本来以为会出现路径什么的幺蛾子，不过竟然很顺利。。  
+只是在运行第二个解压时卡住了，建议等待5分钟没反应后可以再开一个命令行  
+ok 后面为了节省时间直接下载好原py文件 在命令行运行 这边建议在Jupyter notebook或者像Pycharm这样运行
+```
+python save_pic.py
+```
+报错 scipy这个模块缺toimage,刚开始经查询是缺pillow这个包  
+我们一键安装
+```
+pip install pillow -i https://pypi.douban.com/simple
+```
+没想到还是报错 进一步查询发现toimage这个函数被**移除**了！哭了 所以把最后一行改成下面这个就ok了  
+```
+Image.fromarray(image_array).convert('RGB').save(filename)
+```
+这个改完之后，其他的运行起来简直和德芙一样丝滑 丝毫没有阻力  
+不过这不能阻挡我进军Ubuntu的决心！ 明天完成Chapter2后就租一个腾讯云的服务器！ 冲
