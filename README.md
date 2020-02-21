@@ -54,3 +54,11 @@ Image.fromarray(image_array).convert('RGB').save(filename)
 ```
 这个改完之后，其他的运行起来简直和德芙一样丝滑 丝毫没有阻力  
 不过这不能阻挡我进军Ubuntu的决心！ 明天完成Chapter2后就租一个腾讯云的服务器！ 冲
+许久不来的更新 这次直接上了chapter_8 用了GPU  
+一个是免费的google colab 还有一个是收费的mist gpu 速度大概差了三倍左右  
+在运行main函数时 遇到了类似的错误 scipy的imsave又出了问题 当我在找替换时  
+发现了个神命令
+```
+pip install scipy==1.0.0 --user
+```
+既然scipy更新后不能用 那我就直接用老版 一劳永逸 开心
